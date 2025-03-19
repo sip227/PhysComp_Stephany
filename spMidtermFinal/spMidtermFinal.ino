@@ -4,6 +4,9 @@ MIDTERM - Lights y Piezo
 *problem with connecting straight to pin
 also conflict with delay and millis and pot
 header files work 
+
+timing issues
+
 *
 
 */
@@ -73,14 +76,14 @@ void loop() {
 
   int size = sizeof(twinkleDuration) / sizeof(int);
 
-  for (int note = 0; note < size; note++)
-    {
-      int duration = 1000 / twinkleDuration[note];
-      tone(piezoPin, twinkle[note], duration);
-      int pauseBetweenNotes = duration * 1.30;
-      delay(pauseBetweenNotes); 
+  // for (int note = 0; note < size; note++)
+  //   {
+  //     int duration = 1000 / twinkleDuration[note];
+  //     tone(piezoPin, twinkle[note], duration);
+  //     int pauseBetweenNotes = duration * 1.30;
+  //     delay(pauseBetweenNotes); 
 
-        }
+  //       }
 
   // Read button state
   buttonState = !digitalRead(buttonPin);
@@ -105,6 +108,7 @@ void loop() {
     digitalWrite(ledPin4, LOW);
     digitalWrite(ledPin5, LOW);
     digitalWrite(ledPin6, LOW);
+    
   } 
   else {
 
