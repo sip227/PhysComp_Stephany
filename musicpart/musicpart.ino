@@ -3,6 +3,9 @@
 //Libraries
 #include "pitches.h"
 
+//Melodies
+#include "twinkleS.h"
+
 //PIEZO
 // const int piezoPin1 =;
 // const int piezoPin2 =;
