@@ -1,6 +1,11 @@
 /*
 MIDTERM - Lights y Piezo
 
+*problem with connecting straight to pin
+also conflict with delay and millis and pot
+header files work 
+*
+
 */
 
 //Libraries
