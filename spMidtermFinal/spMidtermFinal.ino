@@ -6,6 +6,7 @@ also conflict with delay and millis and pot
 header files work 
 
 timing issues
+delay is the main issue was able to work between the potentiometer
 
 *
 
@@ -110,16 +111,27 @@ void loop() {
     digitalWrite(ledPin6, LOW);
     
   } 
-  else {
+  else if(!toggle){
 
     // Toggle the LEDs based on potentiometer range and button toggle
       if (0 <= potValue && potValue <= 399) {
         currentMillis1 = millis();
         if (currentMillis1 - previousMillis1 >= timerInterval1) {
           previousMillis1 = currentMillis1;
+          digitalWrite(ledPin4, LOW);
+          digitalWrite(ledPin5, LOW);
+          digitalWrite(ledPin6, LOW);
           digitalWrite(ledPin1, !digitalRead(ledPin1));
           digitalWrite(ledPin2, !digitalRead(ledPin2));
           digitalWrite(ledPin3, !digitalRead(ledPin3));
+
+           for (int note = 0; note < size; note++)
+           {
+            int duration = 1000 / twinkleDuration[note];
+            tone(piezoPin, twinkle[note], duration);
+            int pauseBetweenNotes = duration * 1.30;
+            delay(pauseBetweenNotes); 
+         }
         }
   
       } 
@@ -127,6 +139,9 @@ void loop() {
         currentMillis2 = millis();
         if (currentMillis2 - previousMillis2 >= timerInterval2) {
           previousMillis2 = currentMillis2;
+          digitalWrite(ledPin1, LOW);
+          digitalWrite(ledPin2, LOW);
+          digitalWrite(ledPin3, LOW);
           digitalWrite(ledPin4, !digitalRead(ledPin4));
           digitalWrite(ledPin5, !digitalRead(ledPin5));
           digitalWrite(ledPin6, !digitalRead(ledPin6));
