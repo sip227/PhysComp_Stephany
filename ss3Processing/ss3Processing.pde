@@ -37,7 +37,7 @@ int r, g, b = 0;
 
 //Timing to slow flashing
 int lastColorTime = 0;
-int changeTimeInterval = 1000;
+int changeTimeInterval = 150;
 
 
 void setup()
@@ -59,21 +59,40 @@ void draw()
     val = myPort.read();
     if(millis() - lastColorTime > changeTimeInterval)
   {
-       if (val != 0 && val <=200)
+       if (val != 0 && val <=100)
   {
-    r = int(random(0, 255));
-    g = int(random(0, 255));
-    b = int(random(0, 255));
+    r = int(random(200, 255));;
+    g = int(random(0, 55));
+    b = int(random(0, 95));
+    //ellipseH = ellipseH - 10;
   }
-        else if( val > 200)
+    else if(val > 100 && 200 > val)
     {
-      ellipseH = ellipseH + val;
+      r = int(random(0, 105));
+      g = int(random(200, 255));
+      b = int(random(0, 105));
     }
+    
+    else if(val >200)
+    {
+      r = int(random(0, 75));
+      g = int(random(0, 90));
+      b = int(random(180, 255));
+    }
+    //    else if( val > 200)
+    //{
+    //  //for(int i=0; i<=3; i++)
+    //  //{ 
+    //  //  ellipseH = ellipseH + 10;
+    //  // }
+    //  //ellipseH = ellipseH + val;
+    //}
         else
   {
     r = 255;
     g = 222;
     b = 33;
+    //ellipseH = 130;
   }
   
   lastColorTime = millis();
