@@ -47,6 +47,19 @@ void draw()
   if (myPort.available() > 0)
   {
     val = myPort.read();
+    if (val != 0 && val <=255)
+  {
+    r = r++;
+    g = g++;
+    b = b++;
+  }
+    else
+  {
+    r = 255;
+    g = 222;
+    b = 33;
+  }
+  
   }
   //Color for base of Lamp
   fill(227, 243, 242);
