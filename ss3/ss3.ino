@@ -20,7 +20,7 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   currentTime = millis();
-  if ()
+  if (currentTime - lastTime >= timerInterval)
   {
     lastTime = currentTime;
     adcRead = analogRead(adcPin);

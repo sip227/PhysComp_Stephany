@@ -33,8 +33,8 @@ int r, g, b = 0;
 void setup()
 {
   size(600,600);
-  
-  String portName = Serial.list()[0];
+  //1 is for home pc
+  String portName = Serial.list()[1];
   
   myPort = new Serial(this, portName, 115200);
   background(backr, backg, backb);
