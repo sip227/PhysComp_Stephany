@@ -44,7 +44,7 @@ void setup()
 {
   size(600,600);
   //1 is for home pc
-  String portName = Serial.list()[1];
+  String portName = Serial.list()[0];
   
   myPort = new Serial(this, portName, 115200);
   background(backr, backg, backb);
@@ -61,10 +61,10 @@ void draw()
   {
        if (val != 0 && val <=100)
   {
-    r = int(random(200, 255));;
+    r = int(random(200, 255));
     g = int(random(0, 55));
     b = int(random(0, 95));
-    //ellipseH = ellipseH - 10;
+    ellipseH = ellipseH - 10;
   }
     else if(val > 100 && 200 > val)
     {
@@ -79,14 +79,14 @@ void draw()
       g = int(random(0, 90));
       b = int(random(180, 255));
     }
-    //    else if( val > 200)
-    //{
-    //  //for(int i=0; i<=3; i++)
-    //  //{ 
-    //  //  ellipseH = ellipseH + 10;
-    //  // }
-    //  //ellipseH = ellipseH + val;
-    //}
+        else if( val > 200)
+    {
+      for(int i=0; i<=3; i++)
+      { 
+        ellipseH = ellipseH + 10;
+       }
+      //ellipseH = ellipseH + val;
+    }
         else
   {
     r = 255;
