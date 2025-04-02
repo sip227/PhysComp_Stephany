@@ -65,7 +65,12 @@ void draw()
   ellipse(ellipseX, ellipseY, ellipseH , ellipseW);
   //Hat Lamp
   fill(r,g,b);
-  quad(quad1x, quad1y, quad2x, quad2y, quad3x, quad3y, quad4x, quad4y);  
+  quad(quad1x, quad1y, quad2x, quad2y, quad3x, quad3y, quad4x, quad4y);
+  
+  if(pot_1 > 20)
+  {
+    ellipseX = ellipseX - 10;
+  }
   
   if (b_1)
   {
