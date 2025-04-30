@@ -35,7 +35,9 @@ void setup()
   happyAzu = loadImage("images/happyAzu.png");
   
   bonk = new Gif(this, "images/bonk.gif");
-  bonk.loop();
+  //bonk.play();
+  bonk.ignoreRepeat();
+  //bonk.noLoop();
   
   headpat = new Gif(this, "images/headpat.gif");
   headpat.loop();
@@ -59,6 +61,7 @@ void draw()
     background(255);
     //image(bonk, pngX, pngY);
     image(madAzu, pngX, pngY);
+    bonk.play();
     image(bonk, 240, 125, 200, 200);
   }
   if(keyPressed)
