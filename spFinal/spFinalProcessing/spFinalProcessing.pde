@@ -1,5 +1,6 @@
-//WIP - STEPHANY PENA
-//VISUALIZING THE INTENDED EVENTS NATIVELY VIA PROCESSING
+//Final - STEPHANY PENA
+//Two Events
+//Am looking to figure out some of the kinks
 
 
 import gifAnimation.*; //HELPS TO PLAY GIF ANIMATION VIA LIBRARY
@@ -109,7 +110,7 @@ void draw()
   {
     int pirSensor = int(map(val[1], -128, 127, 0, 255));
     int forceSensor = int(map(val[2], -128, 127, 0, 255));
-      if(forceSensor > 950)
+      if(forceSensor > 10) // if its at 250 it senses no data
       {//will need to fix this as i want bonk to play at time of bonking
         background(255);
     //image(bonk, pngX, pngY);
