@@ -9,7 +9,7 @@
 
 */
 
-const int pinRBG = 38;
+//const int pinRBG = 38;
 
 const int potPin =1;
 

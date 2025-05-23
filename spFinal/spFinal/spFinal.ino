@@ -15,15 +15,15 @@ int timerInterval = 20; //not reliable with values less than 20ms
 
 void setup() 
 {
-  analogReadResolution(10);  
+  analogReadResolution(8);  
   Serial.begin(115200); //start serial comm @ 115200 baud rate
 }
 
 void loop() 
 {
 
-  pirSensorRead  = map(analogRead(pirSensorPin), 0, 1023, -512, 511);
-  forceSensorRead = map(analogRead(forceSensorPin), 0, 1023, -512, 511);
+  pirSensorRead  = map(analogRead(pirSensorPin), 0, 255, -128, 127);
+  forceSensorRead = map(analogRead(forceSensorPin), 0, 255, -128, 127);
 
 
   currentTime = millis(); //read current elapsed time
